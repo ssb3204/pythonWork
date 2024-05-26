@@ -33,6 +33,6 @@ jobs:
 
       - name: Add data
         run: |
-          python update_firebase.py
+          python update_firebase_b.py
         env:
           DATA_GO_KR_API_KEY: ${{ secrets.BRIDGEKEY }}
