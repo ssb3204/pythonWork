@@ -45,8 +45,7 @@ def add_data_to_firebase(data):
     for item in data["getWaterImrsnInfo"]["body"]["items"]["item"]:
         obsr_date = item["obsrTime"].split(" ")[0]  # Extract the date part of obsrTime
         obsr_time = item["obsrTime"]
-        print(obsr_date)
-        print(obsr_time)
+
         doc_ref = db.collection("bridge").document(obsr_date).collection("data").document(item["siteName"])
         
         item_data = {
@@ -60,10 +59,10 @@ def add_data_to_firebase(data):
             "obsrTime": item["obsrTime"],
             "sttus": item["sttus"],
             "sttusNm": item["sttusNm"],
-            "createdAt": now,
+            "createdAt": now
         }
 
-        doc_ref.set(item)
+        doc_ref.set(item_data)
 
     return "Data added to Firebase"
 
