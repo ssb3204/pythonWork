@@ -15,15 +15,14 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 API_URL = "http://apis.data.go.kr/6260000/BusanWaterImrsnInfoService/getWaterImrsnInfo"
-SERVICDE_KEY="=NiMnlkGf4Ru8fUV0BEO0xsA5dOUvEbtDJsqn8Vb%2BdYe%2Bx2CzIdfi%2Fv5LlIrzGcJ3TH2NBhEDIzjWIwbmDcHA3A%3D%3D"
-
+BRIDGE_KEY=os.environ.get("BRIDGEKEY")
 
 now = datetime.datetime.now(tz=pytz.timezone('Asia/Seoul'))
 
 
 def get_waterfall_info(pageNo=1, numOfRows=25):
     params = {
-        "serviceKey": SERVICDE_KEY,
+        "serviceKey": BRIDGE_KEY,
         "pageNo": pageNo,
         "numOfRows": numOfRows,
         "resultType": "json",
