@@ -1,4 +1,4 @@
-name: Python work
+name: Update rain data
 
 on:
   # 매 15시 0분에 실행
