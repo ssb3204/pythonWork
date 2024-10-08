@@ -64,7 +64,7 @@ def add_data_to_firebase(data):
         doc_ref.set(item_data)
 
     return "Data added to Firebase"
-
+# cahnge commi message
 
 data = get_waterfall_info()
 result = add_data_to_firebase(data)
